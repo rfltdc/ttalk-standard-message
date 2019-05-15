@@ -205,13 +205,13 @@
             "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
           },
           {
-            "$ref": "#/components/parameters/CompanyPath"
+            "$ref": "#/components/parameters/Company"
           },
           {
-            "$ref": "#/components/parameters/ProductionOrderNumberPath"
+            "$ref": "#/components/parameters/ProductionOrderNumber"
           },
           {
-            "$ref": "#/components/parameters/AppointmentTypePath"
+            "$ref": "#/components/parameters/AppointmentType"
           }
         ],
         "responses": {
@@ -281,7 +281,7 @@
           "format": "char(1)"
         }
       },
-      "CompanyPath": {
+      "Company": {
         "name": "Company",
         "in": "path",
         "description": "Código da empresa",
@@ -291,7 +291,7 @@
           "format": "char(3)"
         }
       },
-      "ProductionOrderNumberPath": {
+      "ProductionOrderNumber": {
         "name": "ProductionOrderNumber",
         "in": "path",
         "description": "Número Ordem Produção",
@@ -301,7 +301,7 @@
           "format": "char(10)"
         }
       },
-      "AppointmentTypePath": {
+      "AppointmentType": {
         "name": "AppointmentType",
         "in": "path",
         "description": "Tipo de Apontamento : 1 - Apontamento por Ordem de Produção",
