@@ -90,7 +90,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/ProductionAppointment_2_003.json#/definitions/BusinessContentType"
+                  "type": "array",
+                  "items": {
+                    "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/ProductionAppointment_2_003.json#/definitions/BusinessContentType"
+                  }
                 }
               }
             }
