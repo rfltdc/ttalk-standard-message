@@ -40,10 +40,10 @@
     }
   },
   "paths": {
-    "/ProductionAppointment": {
+    "/productionappointment": {
       "get": {
         "tags": [
-          "ProductionAppointment"
+          "productionappointment"
         ],
         "summary": "Retorna o Apontamento de Produção",
         "x-totvs": {
@@ -75,13 +75,31 @@
             "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
           },
           {
-            "$ref": "#/components/parameters/CompanyQuery"
+            "name": "company",
+            "in": "query",
+            "description": "Código da empresa",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/ProductionOrderNumberQuery"
+            "name": "productionordernumber",
+            "in": "query",
+            "description": "Número Ordem Produção",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "$ref": "#/components/parameters/AppointmentTypeQuery"
+            "name": "appointmenttype",
+            "in": "query",
+            "description": "Tipo de Apontamento : 1 - Apontamento por Ordem de Produção",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -184,137 +202,6 @@
           }
         }
       }
-    },
-    "/ProductionAppointment/{Company}/{ProductionOrderNumber}/{AppointmentType}": {
-      "get": {
-        "tags": [
-          "ProductionAppointment"
-        ],
-        "summary": "Retorna um Apontamento de Produção",
-        "x-totvs": {
-          "productInformation": [
-            {
-              "product": "Logix",
-              "available": true,
-              "note": "Este verbo esta disponivel com todos os parametros",
-              "minimalVersion": "12.1.25"
-            }
-          ]
-        },
-        "description": "Retorna um Apontamento de Produção",
-        "operationId": "getProductionAppointmentType",
-        "parameters": [
-          {
-            "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/Company"
-          },
-          {
-            "$ref": "#/components/parameters/ProductionOrderNumber"
-          },
-          {
-            "$ref": "#/components/parameters/AppointmentType"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Operação realizada com sucesso",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/ProductionAppointment_2_003.json#/definitions/BusinessContentType"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Erro na listagem dos Apontamentos de Produção",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Registro não encontrado",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/apis/types/totvsApiTypesBase.json#/definitions/ErrorModel"
-                }
-              }
-            }
-          }
-        }
-      }
     }
-  },
-  "components": {
-    "parameters": {
-      "CompanyQuery": {
-        "name": "Company",
-        "in": "query",
-        "description": "Código da empresa",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "char(3)"
-        }
-      },
-      "ProductionOrderNumberQuery": {
-        "name": "ProductionOrderNumber",
-        "in": "query",
-        "description": "Número Ordem Produção",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "char(10)"
-        }
-      },
-      "AppointmentTypeQuery": {
-        "name": "AppointmentType",
-        "in": "query",
-        "description": "Tipo de Apontamento : 1 - Apontamento por Ordem de Produção",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "format": "char(1)"
-        }
-      },
-      "Company": {
-        "name": "Company",
-        "in": "path",
-        "description": "Código da empresa",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "char(3)"
-        }
-      },
-      "ProductionOrderNumber": {
-        "name": "ProductionOrderNumber",
-        "in": "path",
-        "description": "Número Ordem Produção",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "char(10)"
-        }
-      },
-      "AppointmentType": {
-        "name": "AppointmentType",
-        "in": "path",
-        "description": "Tipo de Apontamento : 1 - Apontamento por Ordem de Produção",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "char(1)"
-        }
-      }
-    },
-    "schemas": {}
   }
 }
