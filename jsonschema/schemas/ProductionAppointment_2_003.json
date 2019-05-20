@@ -305,29 +305,31 @@
 					"maxLength": 20
 				},
 				"ListOfReversalAppointments": {
-					"type": "array",
-					"multipleOf": 0.0001,
-					"items": {
-						"type": "object",
-						"properties": {
-							"IntegrationReport": {
-								"description": "Reporte Integração",
-								"type": "string",
-								"maxLength": 10
-							},
-							"ReversalType": {
-								"description": "Tipo de reversão / 1 - Produção / 2 - Recusa",
-								"type": "string",
-								"enum": [
-									"1",
-									"2"
-								]
-							},
-							"ReversalQuantity": {
-								"description": "Quantidade revertida",
-								"type": "number",
-								"minimum": -999999999999999,
-								"maximum": 999999999999999
+					"_expandables": {
+						"type": "array",
+						"multipleOf": 0.0001,
+						"items": {
+							"type": "object",
+							"properties": {
+								"IntegrationReport": {
+									"description": "Reporte Integração",
+									"type": "string",
+									"maxLength": 10
+								},
+								"ReversalType": {
+									"description": "Tipo de reversão / 1 - Produção / 2 - Recusa",
+									"type": "string",
+									"enum": [
+										"1",
+										"2"
+									]
+								},
+								"ReversalQuantity": {
+									"description": "Quantidade revertida",
+									"type": "number",
+									"minimum": -999999999999999,
+									"maximum": 999999999999999
+								}
 							}
 						}
 					}

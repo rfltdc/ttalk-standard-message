@@ -75,6 +75,14 @@
             "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/apis/types/totvsApiTypesBase.json#/parameters/Fields"
           },
           {
+            _expandables: ["ListOfReversalAppointments", "BusinessContentType"]  ,
+            Items: [
+              {
+              "$ref": "https://raw.githubusercontent.com/totvs/ttalk-standard-message/master/jsonschema/schemas/ProductionAppointment_2_003.json#/definitions/BusinessContentType"
+              }
+            ]
+          },
+          {
             "name": "company",
             "in": "query",
             "description": "Código da empresa",
