@@ -305,7 +305,6 @@
 					"maxLength": 20
 				},
 				"ListOfReversalAppointments": {
-					"_expandables": {
 						"type": "array",
 						"multipleOf": 0.0001,
 						"items": {
@@ -332,7 +331,6 @@
 								}
 							}
 						}
-					}
 				},
 				"ToolCode": {
 					"description": "Código Ferramenta",
